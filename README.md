@@ -12,7 +12,7 @@ This library provides a clean and efficient interface for configuring the sensor
 
 ---
 
-# Features
+## Features
 
 * 3-axis accelerometer (X, Y, Z)
 * 3-axis gyroscope (X, Y, Z)
@@ -28,7 +28,7 @@ This library provides a clean and efficient interface for configuring the sensor
 
 ---
 
-# Supported Platforms
+## Supported Platforms
 
 * Arduino UNO / Mega
 * ESP32
@@ -36,7 +36,7 @@ This library provides a clean and efficient interface for configuring the sensor
 
 ---
 
-# Hardware
+## Hardware
 
 Supported sensor:
 
@@ -44,13 +44,13 @@ Supported sensor:
 
 ---
 
-# Connection
+## Connection
 
 The **BMI323 supports both I²C and SPI communication**.
 
 ---
 
-## I²C Connection
+#### I²C Connection
 
 | BMI323 Pin | MCU Pin | Description  |
 |------------|--------|-------------|
@@ -59,7 +59,7 @@ The **BMI323 supports both I²C and SPI communication**.
 | SDA        | SDA    | I²C data     |
 | SCL        | SCL    | I²C clock    |
 
-### I²C Notes
+###### I²C Notes
 
 Default sensor address: 0x68
 
@@ -69,7 +69,7 @@ Recommended I²C speed: 100kHz - 400kHz
 
 ---
 
-## SPI Connection
+#### SPI Connection
 
 | BMI323 Pin | MCU Pin |
 |------------|--------|
@@ -82,9 +82,9 @@ Recommended I²C speed: 100kHz - 400kHz
 
 ---
 
-# Installation
+## Installation
 
-## Arduino Library Manager
+#### Arduino Library Manager
 
 1. Open **Arduino IDE**
 2. Go to **Library Manager**
@@ -93,17 +93,17 @@ Recommended I²C speed: 100kHz - 400kHz
 
 ---
 
-## Manual Installation
+#### Manual Installation
 
 1. Download this repository as ZIP  
 2. Arduino IDE → **Sketch → Include Library → Add .ZIP Library**
 
 ---
 
-# Example
+## Example
 
 ```cpp
-#include <7Semi_BMI323.h>
+##include <7Semi_BMI323.h>
 
 BMI323_7Semi imu;
 
@@ -148,9 +148,9 @@ delay(500);
 ```
 ---
 
-# Library Overview
+## Library Overview
 
-## Reading Accelerometer (g)
+#### Reading Accelerometer (g)
 
 ```cpp
 
@@ -164,7 +164,7 @@ Returns acceleration in **g units**.
 
 ---
 
-## Reading Gyroscope (dps)
+#### Reading Gyroscope (dps)
 
 ```cpp
 
@@ -179,7 +179,7 @@ Returns angular velocity in **degrees per second (dps)**.
 
 ---
 
-## Reading Raw Data
+#### Reading Raw Data
 
 ```cpp
 int16_t ax, ay, az;
@@ -193,9 +193,9 @@ Returns **raw sensor values**.
 
 ---
 
-# Sensor Configuration
+## Sensor Configuration
 
-## Accelerometer
+#### Accelerometer
 
 ```cpp
 imu.setAccelConfig(
@@ -207,7 +207,7 @@ BMI3_ACC_AVG1);
 ```
 Returns **raw sensor values**.
 
-## Gyroscope
+#### Gyroscope
 
 ```cpp
 imu.setGyroConfig(
@@ -221,7 +221,7 @@ BMI3_GYR_AVG1);
 
 ---
 
-# FIFO Usage
+## FIFO Usage
 
 Enable FIFO:
 ```cpp
@@ -241,7 +241,7 @@ imu.getFifoData(fifo);
 
 ---
 
-# Interrupts
+## Interrupts
 
 Configure interrupt pin:
 
@@ -253,7 +253,7 @@ imu.enableInterrupt(BMI3_INT1, true, false);
 
 ---
 
-# Temperature
+## Temperature
 
 ```cpp
 float temp;
@@ -265,9 +265,9 @@ Returns temperature in **°C**.
 
 ---
 
-# Calibration
+## Calibration
 
-## Gyroscope Calibration
+#### Gyroscope Calibration
 
 ```cpp
 imu.calibrateGyro(1, true);
@@ -276,14 +276,14 @@ imu.calibrateGyro(1, true);
 
 ---
 
-## Accelerometer FOC
+#### Accelerometer FOC
 ```cpp
 imu.calibrateAccelFOC(true, false, false, false);
 ```
 
 ---
 
-# Example Applications
+## Example Applications
 
 Typical applications include:
 
@@ -296,13 +296,13 @@ Typical applications include:
 
 ---
 
-# License
+## License
 
 MIT License
 
 ---
 
-# Author
+## Author
 
 7Semi
 
